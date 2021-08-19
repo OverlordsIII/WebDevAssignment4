@@ -83,9 +83,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
     showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
       allCategoriesUrl,
-      function (responseText) {
-        buildAndShowHomeHTML(responseText);
-      }, // ***** <---- TODO: STEP 1: Substitute [...] ******
+      buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
       true); // Explicitly setting the flag to get JSON from server processed into an object literal
   });
   // *** finish **
@@ -127,9 +125,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
         // it into the home html snippet.
         //
         // var homeHtmlToInsertIntoMainPage = ....
-        var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml,
-          "randomCategoryShortName",
-          chosenCategoryShortName);
+        var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategoryShortName);
         // console.log(homeHtmlToInsertIntoMainPage);
 
         // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
